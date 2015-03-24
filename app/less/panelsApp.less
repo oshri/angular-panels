@@ -10,6 +10,14 @@
 @bottom-panel-color: rgba(0, 149, 168, 1);
 @mask-color: rgba(128, 128, 128, 0.2);
 
+.transition-cubic-bezier(@time) {
+    -webkit-transition: all @time cubic-bezier(0.165, 0.84, 0.44, 1);
+    -moz-transition: all @time cubic-bezier(0.165, 0.84, 0.44, 1);
+    -ms-transition: all @time cubic-bezier(0.165, 0.84, 0.44, 1);
+    -o-transition: all @time cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all @time cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 .panels{
     position: fixed;
     top: 0;
@@ -18,26 +26,27 @@
     height: 100%;
     transform: translateX(0);
     transform: translateY(0);
+    .transition-cubic-bezier(0.3s);
 
-    &.push-left{
+    &.push-left-panel{
         &.s{transform: translateX(@small)}
         &.m{transform: translateX(@medium)}
         &.l{transform: translateX(@large)} 
     }
 
-    &.push-right{
+    &.push-right-panel{
         &.s{transform: translateX(-@small)}
         &.m{transform: translateX(-@medium)}
         &.l{transform: translateX(-@large)}
     }
 
-    &.push-top{
+    &.push-top-panel{
         &.s{transform: translateY(@small)}
         &.m{transform: translateY(@medium)}
         &.l{transform: translateY(@large)}
     }
 
-    &.push-bottom{
+    &.push-bottom-panel{
         &.s{transform: translateY(-@small)}
         &.m{transform: translateY(-@medium)}
         &.l{transform: translateY(-@large)}
@@ -47,17 +56,19 @@
     .panel{
         position: absolute;
         z-index: 100;
+        .transition-cubic-bezier(0.3s);
 
         &.left-panel{
             left: 0;
             top: 0;
             bottom: 0;
             background-color: @left-panel-color;
+            
 
             &.open{
                 &.s{
                     width: @small;
-                    transform: translateX(0)
+                    transform: translateX(0);
                 }
 
                 &.m{
@@ -229,5 +240,12 @@
                z-index: 99; 
             }
         }
+
+        .content{
+            position: absolute;
+            top: 0;
+            padding: 20px;
+        }
     }
 }
+

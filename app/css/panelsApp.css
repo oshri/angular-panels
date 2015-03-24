@@ -6,46 +6,56 @@
   height: 100%;
   transform: translateX(0);
   transform: translateY(0);
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.panels.push-left.s {
+.panels.push-left-panel.s {
   transform: translateX(200px);
 }
-.panels.push-left.m {
+.panels.push-left-panel.m {
   transform: translateX(350px);
 }
-.panels.push-left.l {
+.panels.push-left-panel.l {
   transform: translateX(750px);
 }
-.panels.push-right.s {
+.panels.push-right-panel.s {
   transform: translateX(-200px);
 }
-.panels.push-right.m {
+.panels.push-right-panel.m {
   transform: translateX(-350px);
 }
-.panels.push-right.l {
+.panels.push-right-panel.l {
   transform: translateX(-750px);
 }
-.panels.push-top.s {
+.panels.push-top-panel.s {
   transform: translateY(200px);
 }
-.panels.push-top.m {
+.panels.push-top-panel.m {
   transform: translateY(350px);
 }
-.panels.push-top.l {
+.panels.push-top-panel.l {
   transform: translateY(750px);
 }
-.panels.push-bottom.s {
+.panels.push-bottom-panel.s {
   transform: translateY(-200px);
 }
-.panels.push-bottom.m {
+.panels.push-bottom-panel.m {
   transform: translateY(-350px);
 }
-.panels.push-bottom.l {
+.panels.push-bottom-panel.l {
   transform: translateY(-750px);
 }
 .panels .panel {
   position: absolute;
   z-index: 100;
+  -webkit-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -ms-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .panels .panel.left-panel {
   left: 0;
@@ -185,4 +195,9 @@
 }
 .panels .content-wrap .panel-mask.show {
   z-index: 99;
+}
+.panels .content-wrap .content {
+  position: absolute;
+  top: 0;
+  padding: 20px;
 }
