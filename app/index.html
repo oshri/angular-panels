@@ -5,14 +5,16 @@
     <title>App</title>
     <link rel="stylesheet" href="/public/css/panelsApp.css">
 </head>
-<body ng-app="panelsApp">
-    <div class="panels">
-        <div class="panel left-panel animated"></div>
-        <div class="panel right-panel"></div>
-        <div class="panel top-panel"></div>
-        <div class="panel bottom-panel"></div>
-        <div class="panel-mask"></div>
-        <div class="content-wrap"></div>
+<body ng-app="panelsApp" ng-cloak>
+    <div class="panels push-left s">
+        <div class="panel left-panel s"></div>
+        <div class="panel right-panel s"></div>
+        <div class="panel top-panel s"></div>
+        <div class="panel bottom-panel s"></div>
+        <div class="content-wrap">
+            <div class="panel-mask show"></div>
+            Content ..........
+        </div>
     </div>
 
     <script src="/vendor/angular/angular.js"></script>

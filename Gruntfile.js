@@ -102,12 +102,12 @@ module.exports = function (grunt) {
                     nodeArgs: ['--debug'],
                     delayTime: 1,
                     env: {
-                        PORT: 9999
+                        PORT: 3000
                     },
                     cwd: __dirname,
                     callback: function(nodemon) {
                         nodemon.on('config:update', function () {
-                            open('http://localhost:9999');
+                            open('http://localhost:3000');
                         });
                     }
                 }

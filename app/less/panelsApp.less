@@ -1,40 +1,169 @@
 // @import (reference) "../../vendors/bootstrap/less/mixins";
 
 
+@small: 200px;
+@medium: 350px;
+@large: 750px;
+@left-panel-color: rgba(0, 149, 168, 1);
+@right-panel-color: rgba(0, 149, 168, 1);
+@top-panel-color: rgba(0, 149, 168, 1);
+@bottom-panel-color: rgba(0, 149, 168, 1);
+@mask-color: rgba(128, 128, 128, 0.2);
+
 .panels{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    transform: translateX(0);
+    transform: translateY(0);
+
+    &.push-left{
+        &.s{transform: translateX(@small)}
+        &.m{transform: translateX(@medium)}
+        &.l{transform: translateX(@large)} 
+    }
+
+    &.push-right{
+        &.s{transform: translateX(-@small)}
+        &.m{transform: translateX(-@medium)}
+        &.l{transform: translateX(-@large)}
+    }
+
+    &.push-top{
+        &.s{transform: translateY(@small)}
+        &.m{transform: translateY(@medium)}
+        &.l{transform: translateY(@large)}
+    }
+
+    &.push-bottom{
+        &.s{transform: translateY(-@small)}
+        &.m{transform: translateY(-@medium)}
+        &.l{transform: translateY(-@large)}
+    }
 
 
     .panel{
         position: absolute;
-        min-width: 200px;
         z-index: 100;
 
         &.left-panel{
             left: 0;
             top: 0;
             bottom: 0;
-            background-color: red;
-            .animation(animation1 5s linear 3s infinite alternate);
+            background-color: @left-panel-color;
+
+            &.open{
+                &.s{
+                    width: @small;
+                    transform: translateX(0)
+                }
+
+                &.m{
+                    width: @medium;
+                    transform: translateX(0)
+                }
+
+                &.l{
+                    width: @large;
+                    transform: translateX(0)
+                }  
+            }
+            
+            &.s{
+                width: @small;
+                transform: translateX(-@small)
+            }
+
+            &.m{
+                width: @medium;
+                transform: translateX(-@medium)
+            }
+
+            &.l{
+                width: @large;
+                transform: translateX(-@large)
+            }
+
         }
 
         &.right-panel{
             right: 0;
             top: 0;
             bottom: 0;
-            background-color: pink;
+            background-color: @right-panel-color;
+
+            &.open{
+                &.s{
+                    width: @small;
+                    transform: translateX(0)
+                }
+
+                &.m{
+                    width: @medium;
+                    transform: translateX(0)
+                }
+
+                &.l{
+                    width: @large;
+                    transform: translateX(0)
+                }  
+            }
+
+            &.s{
+                width: @small;
+                transform: translateX(@small)
+            }
+
+            &.m{
+                width: @medium;
+                transform: translateX(@medium)
+            }
+
+            &.l{
+                width: @large;
+                transform: translateX(@large)
+            }
         }
 
         &.top-panel{
             top: 0;
             left: 0;
             right: 0;
-            min-height: 100px;
-            background-color: blue;
+            background-color: @top-panel-color;
+
+            &.open{
+                &.s{
+                    height: @small;
+                    transform: translateY(0)
+                }
+
+                &.m{
+                    height: @medium;
+                    transform: translateY(0)
+                }
+
+                &.l{
+                    height: @large;
+                    transform: translateY(0)
+                }  
+            }
+
+            &.s{
+                height: @small;
+                transform: translateY(-@small)
+            }
+
+            &.m{
+                height: @medium;
+                transform: translateY(-@medium)
+            }
+
+            &.l{
+                height: @large;
+                transform: translateY(-@large)
+            }
         }
 
         &.bottom-panel{
@@ -42,43 +171,63 @@
             left: 0;
             right: 0;
             min-height: 100px;
-            background-color: yellow;
+            background-color: @bottom-panel-color;
+
+            &.open{
+                &.s{
+                    height: @small;
+                    transform: translateY(0)
+                }
+
+                &.m{
+                    height: @medium;
+                    transform: translateY(0)
+                }
+
+                &.l{
+                    height: @large;
+                    transform: translateY(0)
+                }  
+            }
+
+            &.s{
+                height: @small;
+                transform: translateY(@small)
+            }
+
+            &.m{
+                height: @medium;
+                transform: translateY(@medium)
+            }
+
+            &.l{
+                height: @large;
+                transform: translateY(@large)
+            }
         }
 
     }
 
-    .panel-mask{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: gray;
-        z-index: 99;
-    }
+    
 
     .content-wrap{
         position: absolute;
         width: 100%;
         height: 100%;
         background-color: white;
+
+        .panel-mask{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: @mask-color;
+            z-index: -1;
+
+            &.show{
+               z-index: 99; 
+            }
+        }
     }
-}
-
-.animation (@arguments) {
-    -webkit-animation: @arguments;
-    -moz-animation: @arguments;
-    -ms-animation: @arguments;
-    -o-animation: @arguments;
-    animation: @arguments;
-    }
-
-.animate (@arguments) {
-    .animation(@arguments);
-}
-
- 
-.animation1() {
-    from {margin-top: 3px;}
-    to {margin-top: 333px;}
 }
