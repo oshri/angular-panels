@@ -2,20 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sidenav angular</title>
-    <link rel="stylesheet" href="/public/css/sidenav-angular.css">
+    <title>App</title>
+    <link rel="stylesheet" href="/public/css/panelsApp.css">
 </head>
-<body>
-    <div class="sidenavApp" ng-app="sidenavApp">
-        <div sidenav class="content-wrapper" ng-cloak></div>
+<body ng-app="panelsApp">
+    <div class="panels">
+        <div class="panel left-panel animated"></div>
+        <div class="panel right-panel"></div>
+        <div class="panel top-panel"></div>
+        <div class="panel bottom-panel"></div>
+        <div class="panel-mask"></div>
+        <div class="content-wrap"></div>
     </div>
 
     <script src="/vendor/angular/angular.js"></script>
     <script src="/vendor/angular-animate/angular-animate.js"></script>
 
     <script src="/public/scripts/app.js"></script>
-    <script src="/public/scripts/sidenav/sidenav.ctrl.js"></script>
-    <script src="/public/scripts/sidenav/sidenav.dir.js"></script>
-    <script src="/public/scripts/sidenav/togglePanel.dir.js"></script>
+
 </body>
 </html>

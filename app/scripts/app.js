@@ -1,6 +1,6 @@
 (function (angular) {
     'use strict';
 
-    angular.module('sidenavApp', ['ngAnimate']);
+    angular.module('panelsApp', ['ngAnimate']);
 
 }(window.angular));

@@ -1,13 +1,13 @@
 {
-  "name": "sidenav-angular",
-  "version": "1.0.0",
+  "name": "panelsApp",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Eugene Brodsky <eugene@cooladata.com>",
-  "license": "ISC",
+  "author": "Oshri Kdoshim <cms.x.seo@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.12.3",
     "swig": "^1.4.2"

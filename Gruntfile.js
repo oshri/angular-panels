@@ -93,7 +93,7 @@ module.exports = function (grunt) {
         },
 
         nodemon: {
-            designer: {
+            app: {
                 script: 'server.js',
                 options: {
                     args: [],
@@ -115,8 +115,8 @@ module.exports = function (grunt) {
         },
 
         concurrent: {
-            designer: {
-                tasks: ['less:default','nodemon:designer', 'watch:default'],
+            app: {
+                tasks: ['less:default','nodemon:app', 'watch:default'],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -134,7 +134,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('default', ['concurrent:designer']);
+    grunt.registerTask('default', ['concurrent:app']);
     grunt.registerTask('build', [
         'clean:default',
         'less:default',
