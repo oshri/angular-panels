@@ -38,9 +38,6 @@
             scope.close = function(){
                 disabledMask();
                 closeActivePanel();
-                activePanel = undefined;
-                activePanelSize = undefined;
-                activePanelType = undefined;
             };
 
             function closeActivePanel () {
@@ -49,6 +46,9 @@
                 } else {
                     el.find('.' + activePanel).removeClass('open');
                 }
+                activePanel = undefined;
+                activePanelSize = undefined;
+                activePanelType = undefined;
             }
 
             function activeMask (){

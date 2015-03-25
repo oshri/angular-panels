@@ -7,10 +7,14 @@
 </head>
 <body ng-app="panelsApp" ng-cloak>
     <div class="panels" panels>
-        <div class="panel left-panel s"></div>
-        <div class="panel right-panel s"></div>
-        <div class="panel top-panel s"></div>
-        <div class="panel bottom-panel s"></div>
+        <panel panel-name="left-panel" panel-size="s" panel-options=""></panel>
+        <panel panel-name="right-panel" panel-size="s" panel-options=""></panel>
+        <panel panel-name="top-panel" panel-size="s" panel-options=""></panel>
+        <panel panel-name="bottom-panel" panel-size="s" panel-options=""></panel>
+        <!-- <div class="panel left-panel s"></div> -->
+        <!-- <div class="panel right-panel s"></div> -->
+        <!-- <div class="panel top-panel s"></div> -->
+        <!-- <div class="panel bottom-panel s"></div> -->
         <div class="content-wrap">
             <div class="panel-mask" ng-show="mask" ng-click="close()"></div>
             <div class="content">
@@ -34,7 +38,11 @@
     <script src="/vendor/angular-animate/angular-animate.js"></script>
 
     <script src="/public/scripts/app.js"></script>
+    <script src="/public/scripts/factories/modalFactory.js"></script>
+    <script src="/public/scripts/factories/modalStackFactory.js"></script>
+    <script src="/public/scripts/factories/stackedMapFactory.js"></script>
     <script src="/public/scripts/directives/panels/panels.dir.js"></script>
+    <script src="/public/scripts/directives/panels/panel.dir.js"></script>
 
 </body>
 </html>
