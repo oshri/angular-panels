@@ -1,4 +1,4 @@
-(function(angular,$){
+(function(angular){
     'use-strict';
 
     angular.module('panelsApp').directive('panels', Panels);
@@ -17,13 +17,13 @@
         
             scope.open = function(panel, type, size, options){
                 if (type == 'push') {
-                    $(el).addClass('push-' + panel).addClass(size);
+                    el.addClass('push-' + panel).addClass(size);
                     activePanel = 'push-' + panel;
                     activePanelType = type;
                     activePanelSize = size;
                     activeMask();
                 } else {
-                   $(el).find('.' + panel).addClass('open');
+                   el.find('.' + panel).addClass('open');
                    activePanel =  panel;
                    activePanelType = type;
                    activePanelSize = size;
@@ -38,23 +38,26 @@
             scope.close = function(){
                 disabledMask();
                 closeActivePanel();
+                activePanel = undefined;
+                activePanelSize = undefined;
+                activePanelType = undefined;
             };
 
             function closeActivePanel () {
                 if (activePanelType == 'push') {
-                    $(el).removeClass('push-' + activePanel).removeClass(activePanelSize);
+                    el.removeClass(activePanel).removeClass(activePanelSize);
                 } else {
-                    $(el).find('.' + activePanel).removeClass('open');
+                    el.find('.' + activePanel).removeClass('open');
                 }
             }
 
             function activeMask (){
-                $(el).find('.panel-mask').addClass('show')
+                el.find('.panel-mask').addClass('show')
                 scope.mask = true;
             }
 
             function disabledMask () {
-                $(el).find('.panel-mask').removeClass('show')
+                el.find('.panel-mask').removeClass('show')
                 scope.mask = false;
             }
 
@@ -66,4 +69,4 @@
     Panels.$inject = [];
 
 
-})(window.angular,window.jQuery);
+})(window.angular);
