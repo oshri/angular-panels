@@ -57,6 +57,10 @@
   -o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.panels .panel .panel-content-wrap {
+  width: 100%;
+  height: 100%;
+}
 .panels .panel.left-panel {
   left: 0;
   top: 0;

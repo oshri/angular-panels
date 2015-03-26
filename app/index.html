@@ -6,32 +6,23 @@
     <link rel="stylesheet" href="/public/css/panelsApp.css">
 </head>
 <body ng-app="panelsApp" ng-cloak>
-    <div class="panels" panels>
-        <panel panel-name="left-panel" panel-size="s" panel-options=""></panel>
-        <panel panel-name="right-panel" panel-size="s" panel-options=""></panel>
-        <panel panel-name="top-panel" panel-size="s" panel-options=""></panel>
-        <panel panel-name="bottom-panel" panel-size="s" panel-options=""></panel>
-        <!-- <div class="panel left-panel s"></div> -->
-        <!-- <div class="panel right-panel s"></div> -->
-        <!-- <div class="panel top-panel s"></div> -->
-        <!-- <div class="panel bottom-panel s"></div> -->
+    <div class="panels" panels panel-ui-view="true">
+        <panel panel-name="left-panel"    panel-size="s"  panel-options="" ></panel>
+        <panel panel-name="right-panel"   panel-size="s"  panel-options="" ></panel>
+        <panel panel-name="top-panel"     panel-size="s"  panel-options="" ></panel>
+        <panel panel-name="bottom-panel"  panel-size="s"  panel-options="" ></panel>
         <div class="content-wrap">
             <div class="panel-mask" ng-show="mask" ng-click="close()"></div>
-            <div class="content">
-                <h1>Panels Options</h1>
-                <h2>Overlay</h2>
-                <button ng-click="open('left-panel','over','s')">Left</button>
-                <button ng-click="open('right-panel','over','s')">right</button>
-                <button ng-click="open('top-panel','over','s')">top</button>
-                <button ng-click="open('bottom-panel','over','s')">bottom</button>
-                <h2>Pusher</h2>
-                <button ng-click="open('left-panel','push','s')">Left</button>
-                <button ng-click="open('right-panel','push','s')">right</button>
-                <button ng-click="open('top-panel','push','s')">top</button>
-                <button ng-click="open('bottom-panel','push','s')">bottom</button>
+            <div class="content">     
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
     <script src="/vendor/jquery/dist/jquery.js"></script>
     <script src="/vendor/angular/angular.js"></script>

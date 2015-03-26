@@ -13,7 +13,7 @@
                 activePanelType,
                 activePanelSize;
 
-            scope.mask = false; 
+            scope.mask = false;
         
             scope.open = function(panel, type, size, options){
                 if (type == 'push') {
@@ -59,7 +59,7 @@
             function disabledMask () {
                 el.find('.panel-mask').removeClass('show')
                 scope.mask = false;
-            }
+            }   
 
         };
 
